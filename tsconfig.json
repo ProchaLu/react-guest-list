@@ -27,7 +27,8 @@
     "**/*.tsx",
     "**/*.js",
     "**/*.cjs",
-    "**/*.mjs"
+    "**/*.mjs",
+    "src/Components/Guest"
   ],
   "exclude": ["node_modules", "build"]
 }
