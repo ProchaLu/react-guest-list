@@ -9,7 +9,7 @@ const Header = ({ showAdd, onAdd }) => {
       <h1>guest list</h1>
       <HeaderButton
         color={showAdd ? '#FF4136' : '#0074d9'}
-        text={showAdd ? 'Close' : 'Add'}
+        text={showAdd ? 'CLOSE' : 'ADD'}
         onClick={onAdd}
       />
     </div>

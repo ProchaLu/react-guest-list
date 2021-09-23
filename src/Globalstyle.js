@@ -18,5 +18,71 @@ export const container = css`
   min-height: 300px;
   border: 1px solid black;
   padding: 30px;
+  border-radius: 4px;
+`;
+
+export const blockButton = css`
+  display: inline-block;
+  background: #0074d9;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
   border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  width: 100%;
+`;
+
+export const inputCheck = css`
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+
+  label {
+    flex: 1;
+  }
+
+  input {
+    flex: 2;
+    height: 20px;
+  }
+`;
+
+export const guestListItems = css`
+  margin: 16px;
+  padding: 12px;
+  background-color: #f4f4f4;
+  border-radius: 4px;
+
+  li {
+    list-style: none;
+    font-size: 20px;
+  }
+`;
+
+export const faTimes = css`
+  color: #ff4136;
+  cursor: pointer;
+  float: right;
+  font-size: 24px;
+`;
+
+export const faEdit = css`
+  color: #0074d9;
+  float: right;
+  margin-right: 16px;
+  font-size: 24px;
+  cursor: pointer;
+`;
+
+export const faCheck = css`
+  color: #2ecc40;
+  float: right;
+  margin-right: 16px;
+  font-size: 24px;
+  cursor: pointer;
 `;
