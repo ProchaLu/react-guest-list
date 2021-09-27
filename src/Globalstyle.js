@@ -116,3 +116,52 @@ export const checkBoxAttending = css`
     content: '✓';
   }
 `;
+
+export const deleteButton = css`
+  width: 100%;
+  background: #fe0006;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 50px 10px 10px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+`;
+
+export const showAllButton = css`
+  display: block;
+  width: 100%;
+  background: #0074d9;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+`;
+
+export const functionButton = css`
+  width: 40%;
+  background: #0e9700;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+
+  &:last-child {
+    background: #fe0006;
+  }
+`;
+
+export const buttonDiv = css`
+  text-align: center;
+  justify-content: center;
+`;

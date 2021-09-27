@@ -5,11 +5,15 @@ import Header from './Components/Header/Header';
 import Input from './Components/Input/Input';
 import {
   blockButton,
+  buttonDiv,
   checkBoxAttending,
   container,
+  deleteButton,
   faEdit,
   faTimes,
+  functionButton,
   guestListItems,
+  showAllButton,
 } from './Globalstyle';
 
 function App() {
@@ -76,6 +80,18 @@ function App() {
 
   // delete all guests
 
+  const deleteAllGuests = async () => {
+    for (let i = 0; i < guests.length; i++) {
+      const currentGuestId = guests[i].id;
+      const response = await fetch(`${baseUrl}/${currentGuestId}`, {
+        method: 'DELETE',
+      });
+      response.status === 200
+        ? setGuests([])
+        : alert('Error Deleting All Guest');
+    }
+  };
+
   // update the guest to attending
 
   const updateGuest = async (guest) => {
@@ -92,24 +108,51 @@ function App() {
 
   // on change Attending function for checkbox
 
-  function onChangeAttending(id, attending) {
+  const onChangeAttending = (id, attending) => {
     const copyGuests = [...guests];
     const guestFind = copyGuests.find((g) => g.id === id);
     guestFind.attending = attending;
     updateGuest(guestFind);
     setGuests(copyGuests);
-  }
+  };
 
   // handle Edit
 
-  function handleEdit(id) {
+  const handleEdit = (id) => {
     const copyGuests = [...guests];
     const guestFind = copyGuests.find((g) => g.id === id);
     guestFind.firstName = firstName;
     guestFind.lastName = lastName;
     updateGuest(guestFind);
     setGuests(copyGuests);
-  }
+  };
+
+  // Search for Guests Attending
+
+  const guestsAttending = () => {
+    const filterList1 = [...guests];
+    const filterAttendingList = filterList1.filter(
+      (guest) => guest.attending === true,
+    );
+    setGuests(filterAttendingList);
+  };
+
+  // Search for Guests NOT Attending
+
+  const guestsNotAttending = () => {
+    const filterNotAttendingList = guests.filter(
+      (guest) => guest.attending === false,
+    );
+    setGuests(filterNotAttendingList);
+  };
+
+  // show all guests
+
+  const guestsShowAll = async () => {
+    const response = await fetch(baseUrl);
+    const res = await response.json();
+    setGuests(res);
+  };
 
   // press save button to handle onSubmit
 
@@ -182,7 +225,24 @@ function App() {
             );
           })}
         </ul>
-        <button>DELETE ALL</button>
+        <div>
+          <button css={showAllButton} onClick={() => guestsShowAll()}>
+            SHOW ALL
+          </button>
+        </div>
+        <div css={buttonDiv}>
+          <button css={functionButton} onClick={() => guestsAttending()}>
+            ATTENDING
+          </button>
+          <button css={functionButton} onClick={() => guestsNotAttending()}>
+            NOT ATTENDING
+          </button>
+        </div>
+        <div css={buttonDiv}>
+          <button css={deleteButton} onClick={() => deleteAllGuests()}>
+            DELETE ALL
+          </button>
+        </div>
       </div>
     </div>
   );
