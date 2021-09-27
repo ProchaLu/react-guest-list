@@ -108,10 +108,10 @@ function App() {
 
   // on change Attending function for checkbox
 
-  const onChangeAttending = (id, attending) => {
+  const onChangeAttending = (id, attendingVariable) => {
     const copyGuests = [...guests];
     const guestFind = copyGuests.find((g) => g.id === id);
-    guestFind.attending = attending;
+    guestFind.attending = attendingVariable;
     updateGuest(guestFind);
     setGuests(copyGuests);
   };
