@@ -86,3 +86,33 @@ export const faCheck = css`
   font-size: 24px;
   cursor: pointer;
 `;
+
+export const checkBoxAttending = css`
+  float: right;
+  margin-right: 24px;
+  cursor: pointer;
+  -webkit-appearance: none; /*hides the default checkbox*/
+  height: 24px;
+  width: 24px;
+  position: relative;
+  transition: 0.1s;
+  background-color: #fe0006;
+  text-align: center;
+  bottom: -1px;
+  color: white;
+  border-radius: 3px;
+  outline: none;
+  font-weight: 800;
+  font-size: 16px;
+
+  &:checked {
+    background-color: #0e9700;
+  }
+
+  &:before {
+    content: 'x';
+  }
+  &:checked:before {
+    content: '✓';
+  }
+`;
