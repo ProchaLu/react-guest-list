@@ -24,7 +24,7 @@ function App() {
   const [guests, setGuests] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const baseUrl = 'http://localhost:5000';
+  const baseUrl = 'https://lp-guest-list-api.herokuapp.com';
 
   // functions for onChange firstName and lastName
 
